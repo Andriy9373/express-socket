@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="express-socket">
+    <meta name="author" content="Hirniak Andrii">
+    <title>Express Socket</title>
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body
+    class="overflow-hidden"
+    style="
+        background-image: url(/backgroundImage.jpg);
+        background-repeat: no-repeat;
+        background-size: 400%;
+    "
+>
+    <div class="container">
+        <form class="login-form vh-100 w-100 d-flex flex-column justify-content-center align-items-center">
+            <div class="form-group">
+                <label for="nickname" class="d-block" style="color: #007bff; font-size: 20px;">Nickname</label>
+                <input type="text" id="nickname" class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <div class="row mt-4">
+            <div class="col-8">
+                <div class="messages-list" style="display: none;">
+                    <h2>Messages</h2>
+                    <span class="no-messages">No messages yet 😔</span>
+                    <ul id="message-list" class="list-group overflow-auto" style="max-height: 750px;"></ul>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="users-list" style="display: none;">
+                    <h2>Users</h2>
+                    <ul id="user-list" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="message-form-container p-2 fixed-bottom" style="display: none;">
+            <form class="message-form">
+                <div class="form-row">
+                    <div class="col-10">
+                        <input class="form-control" id="message" type="text" placeholder="message"/>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary w-100" type="submit">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
