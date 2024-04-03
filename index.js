@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
@@ -51,3 +51,4 @@ app.get('/', (req, res) => {
 http.listen(PORT, () => {
     console.log('app is running');
 })
+io.listen(http);
