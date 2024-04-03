@@ -7,6 +7,8 @@ const app = express();
 const server = http.Server(app);
 const io = socket(server);
 
+const PORT = process.env.PORT || 5000;
+
 const users = [];
 
 io.on('connection', (socket) => {
@@ -49,6 +51,6 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 })
 
-server.listen(5000, () => {
+server.listen(PORT, () => {
     console.log('app is running');
 })
