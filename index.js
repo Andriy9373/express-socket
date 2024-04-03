@@ -1,13 +1,10 @@
 const express = require('express');
-const http = require('http');
-const path = require('path');
-const socket = require('socket.io');
 const app = express();
 
-const server = http.Server(app);
-const io = socket(server);
-
 const PORT = process.env.PORT || 5000;
+
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 const users = [];
 
@@ -51,6 +48,6 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 })
 
-server.listen(PORT, () => {
+http.listen(PORT, () => {
     console.log('app is running');
 })
